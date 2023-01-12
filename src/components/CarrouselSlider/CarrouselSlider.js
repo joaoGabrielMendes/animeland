@@ -37,6 +37,7 @@ function CarrouselSlider() {
     <>
       <Slider {...SliderConfig}>
         {topAiring.map((iten) => (
+          //<img alt="cover" src={iten.animeImg} />
           <img alt="cover" src={iten.animeImg} />
         ))}
         {topAiring2.map((iten) => (
