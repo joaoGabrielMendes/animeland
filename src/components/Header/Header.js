@@ -1,4 +1,11 @@
-import { Flex, Spacer, Center, IconButton, Text } from "@chakra-ui/react";
+import {
+  Flex,
+  Spacer,
+  Center,
+  IconButton,
+  Text,
+  Heading,
+} from "@chakra-ui/react";
 import { IconContext } from "react-icons";
 import {
   HiOutlineUser,
@@ -12,9 +19,9 @@ import { GiCardRandom } from "react-icons/gi";
 function Header() {
   return (
     <IconContext.Provider value={{ size: "1.4em" }}>
-      <Flex maxWidth={"1000px"} margin="0 auto" padding={"10px"}>
+      <Flex maxWidth={"1400px"} margin="0 auto" padding={"20px"}>
         <Center>
-          <Text fontSize={"2xl"}>AnimeLand</Text>
+          <Heading fontSize={"3xl"}>AnimeLand</Heading>
         </Center>
         <Spacer />
         <Center>

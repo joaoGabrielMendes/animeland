@@ -3,6 +3,7 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Box } from "@chakra-ui/react";
 
 const SliderConfig = {
   dots: true,
@@ -34,7 +35,7 @@ function CarrouselSlider() {
   }, []);
 
   return (
-    <>
+    <Box>
       <Slider {...SliderConfig}>
         {topAiring.map((iten) => (
           //<img alt="cover" src={iten.animeImg} />
@@ -44,7 +45,7 @@ function CarrouselSlider() {
           <img alt="cover" src={iten.animeImg} />
         ))}
       </Slider>
-    </>
+    </Box>
   );
 }
 

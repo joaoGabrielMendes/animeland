@@ -11,6 +11,7 @@ function AnimeCard({ image, title }) {
             boxSize="200px"
             objectFit="contain"
             alt="anime cover"
+            borderRadius="10"
           />
           <Center>
             <Heading size="sm">{title}</Heading>

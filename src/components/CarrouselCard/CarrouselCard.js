@@ -16,13 +16,13 @@ function CarrouselCard() {
   }, []);
 
   return (
-    <Box marginTop="10">
+    <Box paddingTop={"10"} paddingBottom="10">
       <Center maxWidth="1400" margin="auto" padding={5}>
         <Heading size="md">Popular Anime</Heading>
       </Center>
 
       <Wrap justify="center" maxWidth={1400} margin="auto">
-        {topAnime.map((iten) => (
+        {topAnime.slice(0, 14).map((iten) => (
           <AnimeCard
             title={String(iten.animeTitle).slice(0, 20)}
             image={iten.animeImg}
