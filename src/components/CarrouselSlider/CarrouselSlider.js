@@ -13,7 +13,7 @@ const SliderConfig = {
   slidesToScroll: 10,
 };
 
-function CarouselSlider() {
+function CarrouselSlider() {
   const [topAiring, setTopAiring] = useState([]);
   const [topAiring2, setTopAiring2] = useState([]);
   function getTopAiring() {
@@ -47,4 +47,4 @@ function CarouselSlider() {
   );
 }
 
-export default CarouselSlider;
+export default CarrouselSlider;
