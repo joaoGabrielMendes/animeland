@@ -2,6 +2,9 @@ import { Box } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import AnimeInfoCard from "../../components/AnimeInfoCard/AnimeInfoCard";
 
 function AnimeInfo() {
   const { animeId } = useParams();
@@ -20,10 +23,16 @@ function AnimeInfo() {
   }, []);
 
   return (
-    <Box>
-      <h1>{animeInfo.animeTitle}</h1>
-      <img src={animeInfo.animeImg} />
-    </Box>
+    <>
+      <Header />
+      <AnimeInfoCard
+        title={animeInfo.animeTitle}
+        img={animeInfo.animeImg}
+        synopsis={animeInfo.synopsis}
+        genres={animeInfo.genres}
+        status={animeInfo.status}
+      />
+    </>
   );
 }
 
