@@ -26,6 +26,7 @@ function CarrouselCard() {
           <AnimeCard
             title={String(iten.animeTitle).slice(0, 20)}
             image={iten.animeImg}
+            animeId={iten.animeId}
           />
         ))}
       </Wrap>

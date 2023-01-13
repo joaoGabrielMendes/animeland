@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const SliderConfig = {
   dots: true,
@@ -38,11 +39,14 @@ function CarrouselSlider() {
     <Box>
       <Slider {...SliderConfig}>
         {topAiring.map((iten) => (
-          //<img alt="cover" src={iten.animeImg} />
-          <img alt="cover" src={iten.animeImg} />
+          <Link to={`/animes/${iten.animeId}`}>
+            <img alt="cover" src={iten.animeImg} />
+          </Link>
         ))}
         {topAiring2.map((iten) => (
-          <img alt="cover" src={iten.animeImg} />
+          <Link to={`/animes/${iten.animeId}`}>
+            <img alt="cover" src={iten.animeImg} />
+          </Link>
         ))}
       </Slider>
     </Box>
