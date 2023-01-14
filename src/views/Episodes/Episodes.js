@@ -1,7 +1,9 @@
-import { Box, Heading, LightMode } from "@chakra-ui/react";
+import { Box, Center, Heading, Text } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 function Episodes() {
   const { episodeId } = useParams();
@@ -24,11 +26,18 @@ function Episodes() {
   };
 
   return (
-    <Heading>
-      <Link o="#" onClick={() => openInNewTab(episode.Referer)}>
-        link
-      </Link>
-    </Heading>
+    <Box>
+      <Header />
+
+      <Center padding="10">
+        <Link o="#" onClick={() => openInNewTab(episode.Referer)}>
+          <Text color="blue" fontSize="2xl">
+            Link
+          </Text>
+        </Link>
+      </Center>
+      <Footer />
+    </Box>
   );
 }
 

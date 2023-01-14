@@ -18,7 +18,6 @@ function AnimeEpisodes({ episode, img, episodeId }) {
           backgroundSize: "50px",
           backgroundRepeat: "no-repeat",
           position: "relative",
-
           bottom: "-100",
           zIndex: 2,
         }}

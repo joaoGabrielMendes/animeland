@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function AnimeCard({ image, title, animeId }) {
   return (
-    <Card maxW="170px">
+    <Card maxW="170px" _hover={{ bg: "gray.600" }} transition="0.5s">
       <Link to={`/animes/${animeId}`}>
         <CardBody>
           <Stack divider={<StackDivider />} spacing="2">

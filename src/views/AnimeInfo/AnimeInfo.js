@@ -42,6 +42,7 @@ function AnimeInfo() {
           />
         ))}
       </Flex>
+      <Footer />
     </>
   );
 }

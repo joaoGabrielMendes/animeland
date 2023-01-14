@@ -7,12 +7,16 @@ import { Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const SliderConfig = {
-  dots: true,
+  dots: false,
   arrows: false,
   infinite: true,
-  speed: 500,
+  speed: 100,
   slidesToShow: 10,
   slidesToScroll: 10,
+  autoplay: true,
+  speed: 8000,
+  autoplaySpeed: 20,
+  cssEase: "linear",
 };
 
 function CarrouselSlider() {
