@@ -17,7 +17,7 @@ function AnimeInfoCard({ title, img, synopsis, genres, status }) {
       flexWrap="wrap"
       padding="10"
     >
-      <Image boxSize="400px" objectFit="contain" src={img} />
+      <Image boxSize="400px" objectFit="contain" src={img} padding="4" />
       <Grid templateRows="2">
         <Box>
           <Container padding="0">
