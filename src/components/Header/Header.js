@@ -21,6 +21,7 @@ import {
 
 //import { GiCardRandom } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import Loader from "../Loader/Loader";
 
 function Header() {
   const [search, setSearch] = useState("");
