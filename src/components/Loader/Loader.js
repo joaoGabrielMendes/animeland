@@ -1,5 +1,5 @@
-import { Center } from "@chakra-ui/react";
-import { SpinningOrbitLoader } from "react-loaders-kit";
+import { Box, Center } from "@chakra-ui/react";
+import { WaveLoader } from "react-loaders-kit";
 
 function Loader() {
   const loaderProps = {
@@ -10,15 +10,9 @@ function Loader() {
   };
 
   return (
-    <div className="loader">
-      <SpinningOrbitLoader {...loaderProps} />
-      <Center
-        className="loader-text"
-        strings={["Loading..."]}
-        typeSpeed={60}
-        backSpeed={0}
-      />
-    </div>
+    <Box padding={10}>
+      <WaveLoader {...loaderProps} />
+    </Box>
   );
 }
 

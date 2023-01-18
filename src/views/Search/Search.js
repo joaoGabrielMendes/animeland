@@ -5,22 +5,25 @@ import { useParams } from "react-router-dom";
 import AnimeCard from "../../components/AnimeCard/AnimeCard";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
+import Loader from "../../components/Loader/Loader";
 
 function Search() {
-  const { animeTitle } = useParams();
   const [results, setResults] = useState([]);
+  const { animeTitle } = useParams();
 
   function getResults() {
-    axios(`https://gogoanime.consumet.org/search?keyw=${animeTitle}`).then(
-      (res) => {
-        setResults(res.data);
-      }
-    );
+    try {
+      axios(`https://gogoanime.consumet.org/search?keyw=${animeTitle}`).then(
+        (res) => {
+          setResults(res.data);
+        }
+      );
+    } catch (error) {}
   }
 
   useEffect(() => {
     getResults();
-  }, results);
+  }, [results]);
 
   return (
     <>
@@ -32,13 +35,19 @@ function Search() {
         </Center>
 
         <Wrap justify="center" maxWidth={1400} margin="auto">
-          {results.map((iten) => (
-            <AnimeCard
-              title={String(iten.animeTitle).slice(0, 20)}
-              image={iten.animeImg}
-              animeId={iten.animeId}
-            />
-          ))}
+          {results.length == 0 ? (
+            <Box>
+              <Loader />
+            </Box>
+          ) : (
+            results.map((iten) => (
+              <AnimeCard
+                title={String(iten.animeTitle).slice(0, 20)}
+                image={iten.animeImg}
+                animeId={iten.animeId}
+              />
+            ))
+          )}
         </Wrap>
       </Box>
 
