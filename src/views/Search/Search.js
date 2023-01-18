@@ -20,7 +20,7 @@ function Search() {
 
   useEffect(() => {
     getResults();
-  });
+  }, results);
 
   return (
     <>
@@ -32,7 +32,7 @@ function Search() {
         </Center>
 
         <Wrap justify="center" maxWidth={1400} margin="auto">
-          {results.slice(0, 14).map((iten) => (
+          {results.map((iten) => (
             <AnimeCard
               title={String(iten.animeTitle).slice(0, 20)}
               image={iten.animeImg}
