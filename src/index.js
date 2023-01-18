@@ -17,17 +17,11 @@ const theme = extendTheme({
   },
 });
 
-const config = {
-  initialColorMode: "dark",
-  useSystemColorMode: true,
-};
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ChakraProvider theme={theme}>
-        <ColorModeScript initialColorMode={config.initialColorMode} />
         <App />
       </ChakraProvider>
     </BrowserRouter>
