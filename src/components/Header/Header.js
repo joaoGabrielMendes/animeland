@@ -7,6 +7,8 @@ import {
   Heading,
   Textarea,
   Box,
+  Button,
+  Input,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { IconContext } from "react-icons";
@@ -36,7 +38,7 @@ function Header() {
   return (
     <IconContext.Provider value={{ size: "1.4em" }}>
       <Flex maxWidth={"1400px"} margin="0 auto" padding={"20px"}>
-        <Center>
+        <Center padding="3">
           <Link to="/">
             <Heading fontSize={"3xl"}>AnimeLand</Heading>
           </Link>
@@ -44,9 +46,9 @@ function Header() {
 
         <Spacer />
 
-        <Center>
+        <Center padding="1">
           <Box>
-            <Textarea
+            <Input
               placeholder=""
               resize="none"
               size="xs"
@@ -55,7 +57,7 @@ function Header() {
             />
           </Box>
           <Link to={`/search/${search}`}>
-            <IconButton variant="" icon={<HiSearch />} />
+            <IconButton variant="" icon={<HiSearch />} padding="2" />
           </Link>
         </Center>
       </Flex>
