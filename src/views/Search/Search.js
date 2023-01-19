@@ -36,9 +36,9 @@ function Search() {
 
         <Wrap justify="center" maxWidth={1400} margin="auto">
           {results.length == 0 ? (
-            <Box>
+            <Center>
               <Loader />
-            </Box>
+            </Center>
           ) : (
             results.map((iten) => (
               <AnimeCard
