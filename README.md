@@ -6,11 +6,6 @@
 
 Animeland is a web application, which aims to be a front end of GogoAnime API, to practice the React Js framework.
 
-## Demo
-<p align="center">
-  <a href="https://i.ibb.co/x1b5gtH/Composi-o-1-3.gif">Preview</a>
-  <img src='https://i.ibb.co/x1b5gtH/Composi-o-1-3.gif'>
-</p>
 
 ## Made With
 
