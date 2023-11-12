@@ -11,12 +11,16 @@ function AnimeInfo() {
   const { animeId } = useParams();
   const [animeInfo, setAnimeInfo] = useState([]);
 
-  function getAnimeInfo() {
-    axios(`https://gogoanime.consumet.org/anime-details/${animeId}`).then(
-      (res) => {
-        setAnimeInfo(res.data);
-      }
-    );
+  async function getAnimeInfo() {
+    try {
+      const res = await axios(
+        `https://gogoanime.consumet.org/anime-details/${animeId}`
+      );
+      
+      setAnimeInfo(res.data);
+    } catch (error) {
+      console.log("Something went wrong!");
+    }
   }
 
   useEffect(() => {

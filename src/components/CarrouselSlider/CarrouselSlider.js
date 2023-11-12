@@ -22,16 +22,26 @@ const SliderConfig = {
 function CarrouselSlider() {
   const [topAiring, setTopAiring] = useState([]);
   const [topAiring2, setTopAiring2] = useState([]);
-  function getTopAiring() {
-    axios("https://gogoanime.consumet.org/top-airing").then((res) => {
+  async function getTopAiring() {
+    try {
+      const res = await axios("https://gogoanime.consumet.org/top-airing");
+
       setTopAiring(res.data);
-    });
+    } catch (error) {
+      console.log("Something went wrong!");
+    }
   }
 
-  function getTopAiring2() {
-    axios("https://gogoanime.consumet.org/top-airing?page=2").then((res) => {
+  async function getTopAiring2() {
+    try {
+      const res = await axios(
+        "https://gogoanime.consumet.org/top-airing?page=2"
+      );
+
       setTopAiring2(res.data);
-    });
+    } catch (error) {
+      console.log("Something went wrong!");
+    }
   }
 
   useEffect(() => {

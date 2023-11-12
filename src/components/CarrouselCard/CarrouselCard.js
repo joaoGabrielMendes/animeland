@@ -5,10 +5,14 @@ import AnimeCard from "../AnimeCard/AnimeCard";
 
 function CarrouselCard() {
   const [topAnime, setTopAnime] = useState([[]]);
-  function getTopAnime() {
-    axios("https://gogoanime.consumet.org/popular").then((res) => {
+  async function getTopAnime() {
+    try {
+      const res = await axios("https://gogoanime.consumet.org/popular");
+
       setTopAnime(res.data);
-    });
+    } catch(error) {
+      console.log("Something went wrong!");
+    }
   }
 
   useEffect(() => {

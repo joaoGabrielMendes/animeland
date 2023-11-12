@@ -11,14 +11,16 @@ function Search() {
   const [results, setResults] = useState([]);
   const { animeTitle } = useParams();
 
-  function getResults() {
+  async function getResults() {
     try {
-      axios(`https://gogoanime.consumet.org/search?keyw=${animeTitle}`).then(
-        (res) => {
-          setResults(res.data);
-        }
+      const res = await axios(
+        `https://gogoanime.consumet.org/search?keyw=${animeTitle}`
       );
-    } catch (error) {}
+
+      setResults(res.data);
+    } catch (error) {
+      console.log("Something went wrong!");
+    }
   }
 
   useEffect(() => {
