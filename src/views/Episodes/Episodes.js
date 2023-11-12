@@ -7,13 +7,18 @@ import Footer from "../../components/Footer/Footer";
 
 function Episodes() {
   const { episodeId } = useParams();
-  const [episode, setepisode] = useState([]);
-  function getEpisode() {
-    axios(`https://gogoanime.consumet.org/vidcdn/watch/${episodeId}`).then(
-      (res) => {
-        setepisode(res.data);
-      }
-    );
+  const [episode, setEpisode] = useState([]);
+
+  async function getEpisode() {
+    try {
+      const res = await axios(
+        `https://gogoanime.consumet.org/vidcdn/watch/${episodeId}`
+      );
+      
+      setEpisode(res.data);
+    } catch (error) {
+      console.log("Something went wrong!");
+    }
   }
 
   useEffect(() => {
